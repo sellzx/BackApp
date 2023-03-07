@@ -54,3 +54,4 @@ Thumbs.db
 .vs\BackApp\v16\.suo
 BackApp.Services/obj/Debug/netstandard2.0/BackApp.Services.csprojAssemblyReference.cache
 BackApp/obj/Debug/netcoreapp3.1/BackApp.csprojAssemblyReference.cache
+BackApp.Models/obj/Debug/netstandard2.0/BackApp.Models.csprojAssemblyReference.cache
