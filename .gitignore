@@ -48,3 +48,6 @@ Thumbs.db
 *.mov
 *.wmv
 
+*.ide-shm
+.vs/BackApp/v16/Server/sqlite3/storage.ide-wal
+.vs/BackApp/v16/.suo
