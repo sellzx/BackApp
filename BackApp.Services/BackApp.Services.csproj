@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AWSSDK.DynamoDBv2" Version="3.7.101.55" />
+    <PackageReference Include="AWSSDK.S3" Version="3.7.103.21" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BackApp.Models\BackApp.Models.csproj" />
+  </ItemGroup>
+
+</Project>

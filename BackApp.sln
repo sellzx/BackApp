@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29728.190
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackApp", "BackApp\BackApp.csproj", "{86A7A107-CD41-4675-B52A-F3A8D7536410}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BackApp", "BackApp\BackApp.csproj", "{86A7A107-CD41-4675-B52A-F3A8D7536410}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackApp.Services", "BackApp.Services\BackApp.Services.csproj", "{B44B46B4-A0EA-4BA3-945C-B6CB396F5A49}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackApp.Models", "BackApp.Models\BackApp.Models.csproj", "{1CD15279-3021-47E2-947D-6A1E1D855B38}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{86A7A107-CD41-4675-B52A-F3A8D7536410}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{86A7A107-CD41-4675-B52A-F3A8D7536410}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{86A7A107-CD41-4675-B52A-F3A8D7536410}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B44B46B4-A0EA-4BA3-945C-B6CB396F5A49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B44B46B4-A0EA-4BA3-945C-B6CB396F5A49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B44B46B4-A0EA-4BA3-945C-B6CB396F5A49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B44B46B4-A0EA-4BA3-945C-B6CB396F5A49}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1CD15279-3021-47E2-947D-6A1E1D855B38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CD15279-3021-47E2-947D-6A1E1D855B38}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CD15279-3021-47E2-947D-6A1E1D855B38}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CD15279-3021-47E2-947D-6A1E1D855B38}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

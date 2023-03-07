@@ -1,0 +1,8 @@
+C:\Users\simla\Documents\BackApp\BackApp.Models\bin\Debug\netstandard2.0\BackApp.Models.deps.json
+C:\Users\simla\Documents\BackApp\BackApp.Models\bin\Debug\netstandard2.0\BackApp.Models.dll
+C:\Users\simla\Documents\BackApp\BackApp.Models\obj\Debug\netstandard2.0\BackApp.Models.csprojAssemblyReference.cache
+C:\Users\simla\Documents\BackApp\BackApp.Models\obj\Debug\netstandard2.0\BackApp.Models.AssemblyInfoInputs.cache
+C:\Users\simla\Documents\BackApp\BackApp.Models\obj\Debug\netstandard2.0\BackApp.Models.AssemblyInfo.cs
+C:\Users\simla\Documents\BackApp\BackApp.Models\bin\Debug\netstandard2.0\BackApp.Models.pdb
+C:\Users\simla\Documents\BackApp\BackApp.Models\obj\Debug\netstandard2.0\BackApp.Models.dll
+C:\Users\simla\Documents\BackApp\BackApp.Models\obj\Debug\netstandard2.0\BackApp.Models.pdb

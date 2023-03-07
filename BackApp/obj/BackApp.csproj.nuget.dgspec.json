@@ -1,17 +1,143 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\simla\\source\\repos\\BackApp\\BackApp\\BackApp.csproj": {}
+    "C:\\Users\\simla\\Documents\\BackApp\\BackApp\\BackApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\simla\\source\\repos\\BackApp\\BackApp\\BackApp.csproj": {
+    "C:\\Users\\simla\\Documents\\BackApp\\BackApp.Models\\BackApp.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\simla\\source\\repos\\BackApp\\BackApp\\BackApp.csproj",
-        "projectName": "BackApp",
-        "projectPath": "C:\\Users\\simla\\source\\repos\\BackApp\\BackApp\\BackApp.csproj",
+        "projectUniqueName": "C:\\Users\\simla\\Documents\\BackApp\\BackApp.Models\\BackApp.Models.csproj",
+        "projectName": "BackApp.Models",
+        "projectPath": "C:\\Users\\simla\\Documents\\BackApp\\BackApp.Models\\BackApp.Models.csproj",
         "packagesPath": "C:\\Users\\simla\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\simla\\source\\repos\\BackApp\\BackApp\\obj\\",
+        "outputPath": "C:\\Users\\simla\\Documents\\BackApp\\BackApp.Models\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\simla\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "dependencies": {
+            "AWSSDK.DynamoDBv2": {
+              "target": "Package",
+              "version": "[3.7.101.55, )"
+            },
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\simla\\Documents\\BackApp\\BackApp.Services\\BackApp.Services.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\simla\\Documents\\BackApp\\BackApp.Services\\BackApp.Services.csproj",
+        "projectName": "BackApp.Services",
+        "projectPath": "C:\\Users\\simla\\Documents\\BackApp\\BackApp.Services\\BackApp.Services.csproj",
+        "packagesPath": "C:\\Users\\simla\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\simla\\Documents\\BackApp\\BackApp.Services\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\simla\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "projectReferences": {
+              "C:\\Users\\simla\\Documents\\BackApp\\BackApp.Models\\BackApp.Models.csproj": {
+                "projectPath": "C:\\Users\\simla\\Documents\\BackApp\\BackApp.Models\\BackApp.Models.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "dependencies": {
+            "AWSSDK.DynamoDBv2": {
+              "target": "Package",
+              "version": "[3.7.101.55, )"
+            },
+            "AWSSDK.S3": {
+              "target": "Package",
+              "version": "[3.7.103.21, )"
+            },
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\simla\\Documents\\BackApp\\BackApp\\BackApp.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\simla\\Documents\\BackApp\\BackApp\\BackApp.csproj",
+        "projectName": "BackApp",
+        "projectPath": "C:\\Users\\simla\\Documents\\BackApp\\BackApp\\BackApp.csproj",
+        "packagesPath": "C:\\Users\\simla\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\simla\\Documents\\BackApp\\BackApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\simla\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -26,7 +152,14 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\simla\\Documents\\BackApp\\BackApp.Models\\BackApp.Models.csproj": {
+                "projectPath": "C:\\Users\\simla\\Documents\\BackApp\\BackApp.Models\\BackApp.Models.csproj"
+              },
+              "C:\\Users\\simla\\Documents\\BackApp\\BackApp.Services\\BackApp.Services.csproj": {
+                "projectPath": "C:\\Users\\simla\\Documents\\BackApp\\BackApp.Services\\BackApp.Services.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -37,6 +170,12 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[3.1.5, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

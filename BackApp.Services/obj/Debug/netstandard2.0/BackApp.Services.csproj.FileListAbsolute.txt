@@ -1,0 +1,11 @@
+C:\Users\simla\Documents\BackApp\BackApp.Services\bin\Debug\netstandard2.0\BackApp.Services.deps.json
+C:\Users\simla\Documents\BackApp\BackApp.Services\bin\Debug\netstandard2.0\BackApp.Services.dll
+C:\Users\simla\Documents\BackApp\BackApp.Services\obj\Debug\netstandard2.0\BackApp.Services.csprojAssemblyReference.cache
+C:\Users\simla\Documents\BackApp\BackApp.Services\obj\Debug\netstandard2.0\BackApp.Services.AssemblyInfoInputs.cache
+C:\Users\simla\Documents\BackApp\BackApp.Services\obj\Debug\netstandard2.0\BackApp.Services.AssemblyInfo.cs
+C:\Users\simla\Documents\BackApp\BackApp.Services\bin\Debug\netstandard2.0\BackApp.Services.pdb
+C:\Users\simla\Documents\BackApp\BackApp.Services\bin\Debug\netstandard2.0\BackApp.Models.dll
+C:\Users\simla\Documents\BackApp\BackApp.Services\bin\Debug\netstandard2.0\BackApp.Models.pdb
+C:\Users\simla\Documents\BackApp\BackApp.Services\obj\Debug\netstandard2.0\BackApp.Services.csproj.CopyComplete
+C:\Users\simla\Documents\BackApp\BackApp.Services\obj\Debug\netstandard2.0\BackApp.Services.dll
+C:\Users\simla\Documents\BackApp\BackApp.Services\obj\Debug\netstandard2.0\BackApp.Services.pdb
