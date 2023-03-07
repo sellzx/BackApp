@@ -51,3 +51,4 @@ Thumbs.db
 *.ide-shm
 .vs/BackApp/v16/Server/sqlite3/storage.ide-wal
 .vs/BackApp/v16/.suo
+.vs\BackApp\v16\.suo
