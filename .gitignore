@@ -50,8 +50,9 @@ Thumbs.db
 
 *.ide-shm
 .vs/BackApp/v16/Server/sqlite3/storage.ide-wal
-.vs/BackApp/v16/.suo
-.vs\BackApp\v16\.suo
 BackApp.Services/obj/Debug/netstandard2.0/BackApp.Services.csprojAssemblyReference.cache
 BackApp/obj/Debug/netcoreapp3.1/BackApp.csprojAssemblyReference.cache
 BackApp.Models/obj/Debug/netstandard2.0/BackApp.Models.csprojAssemblyReference.cache
+.vs/BackApp/v16/Server/sqlite3/storage.ide
+.vs/BackApp/DesignTimeBuild/.dtbcache
+.vs/BackApp/v16/.suo
