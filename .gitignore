@@ -348,3 +348,30 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
+BackApp/wwwroot/lib/bootstrap/dist/css/bootstrap.css
+BackApp/wwwroot/lib/bootstrap/dist/css/bootstrap.css.map
+BackApp/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css
+BackApp/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css.map
+BackApp/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css
+BackApp/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css.map
+BackApp/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.min.css
+BackApp/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.min.css.map
+BackApp/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css
+BackApp/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css.map
+BackApp/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.min.css
+BackApp/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.min.css.map
+BackApp/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js
+BackApp/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js.map
+BackApp/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js
+BackApp/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js.map
+BackApp/wwwroot/lib/bootstrap/dist/js/bootstrap.js
+BackApp/wwwroot/lib/bootstrap/dist/js/bootstrap.js.map
+BackApp/wwwroot/lib/bootstrap/dist/js/bootstrap.min.js
+BackApp/wwwroot/lib/bootstrap/dist/js/bootstrap.min.js.map
+BackApp/wwwroot/lib/jquery/dist/jquery.js
+BackApp/wwwroot/lib/jquery/dist/jquery.min.js
+BackApp/wwwroot/lib/jquery/dist/jquery.min.map
+BackApp/wwwroot/lib/jquery-validation/dist/additional-methods.js
+BackApp/wwwroot/lib/jquery-validation/dist/additional-methods.min.js
+BackApp/wwwroot/lib/jquery-validation/dist/jquery.validate.js
+BackApp/wwwroot/lib/jquery-validation/dist/jquery.validate.min.js

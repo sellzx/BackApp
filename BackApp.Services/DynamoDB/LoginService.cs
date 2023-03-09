@@ -26,7 +26,7 @@ namespace BackApp.Services.DynamoDB
             if (getUser != null)
             {
                 result.Success = false;
-                result.Message = $"Ya existe un usuario con ID {registerInputModel.EmailAdress}";
+                result.Message = $"Ya existe un usuario con correo {registerInputModel.EmailAdress}";
                 return result;
             }
             else
@@ -39,7 +39,7 @@ namespace BackApp.Services.DynamoDB
                     LastName = registerInputModel.LastName
                 };
                 result.Success = await SaveAsync(newUser);
-                result.Message = result.Success ? "Usuario registreado con exito" : "Ocurrio un problema";
+                result.Message = result.Success ? "Usuario registrado con exito" : "Ocurrio un problema";
             }
             return result;
         }
