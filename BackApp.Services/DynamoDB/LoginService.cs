@@ -20,13 +20,13 @@ namespace BackApp.Services.DynamoDB
         public async Task<RegisterOutputModel> RegisterUserAsync(RegisterInputModel registerInputModel)
         {
             var result = new RegisterOutputModel();
-            var user = registerInputModel.EmailAdress.ToLower();
+            var user = registerInputModel.Email.ToLower();
             var getUser = await GetAsync(user);
             //Se chequea existencia de usuario
             if (getUser != null)
             {
                 result.Success = false;
-                result.Message = $"Ya existe un usuario con correo {registerInputModel.EmailAdress}";
+                result.Message = $"Ya existe un usuario con correo {registerInputModel.Email}";
                 return result;
             }
             else
