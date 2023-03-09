@@ -1,0 +1,20 @@
+
+{
+    "region" : "us-east-1",
+    "configuration" : "Release",
+    "framework"     : "netcoreapp3.1",
+    "self-contained" : false,
+    "application"    : "BackApp",
+    "environment"    : "BackApp-prod",
+    "enable-xray"    : false,
+    "enhanced-health-type" : "basic",
+    "additional-options"   : "\"aws:autoscaling:launchconfiguration,SecurityGroups\"=\"sg-013fe2d5c6e56da87\";\"aws:ec2:vpc,Subnets\"=\"subnet-04aed4ac1808a46b9\"",
+    "solution-stack"       : "64bit Amazon Linux 2 v2.5.1 running .NET Core",
+    "environment-type"     : "SingleInstance",
+    "cname"                : "backapp-prod",
+    "instance-type"        : "t3a.small",
+    "key-pair"             : "",
+    "instance-profile"     : "aws-elasticbeanstalk-ec2-role",
+    "service-role"         : "aws-elasticbeanstalk-service-role",
+    "proxy-server"         : "nginx"
+}
