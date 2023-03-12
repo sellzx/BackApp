@@ -15,5 +15,9 @@ namespace BackApp.Models.AWS.DynamoDBEntities
         public string Name { get; set; }
         [DynamoDBProperty]
         public string LastName { get; set; }
+        [DynamoDBProperty]
+        public List<string> Requests { get; set; }
+        [DynamoDBProperty]
+        public List<string> Friends { get; set; }
     }
 }

@@ -36,7 +36,9 @@ namespace BackApp.Services.DynamoDB
                     EmailAdress = user,
                     Password = registerInputModel.Password,
                     Name = registerInputModel.Name,
-                    LastName = registerInputModel.LastName
+                    LastName = registerInputModel.LastName,
+                    Friends = new List<string>(),
+                    Requests = new List<string>()
                 };
                 result.Success = await SaveAsync(newUser);
                 result.Message = result.Success ? "Usuario registrado con exito" : "Ocurrio un problema";

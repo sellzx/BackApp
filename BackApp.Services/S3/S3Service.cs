@@ -1,7 +1,10 @@
 ﻿using Amazon;
 using Amazon.S3;
+using Amazon.S3.Model;
 using Amazon.S3.Transfer;
+using BackApp.Models.AWS.DynamoDBEntities;
 using BackApp.Models.Input;
+using BackApp.Services.DynamoDB;
 using BackApp.Services.S3.Client;
 using System;
 using System.Collections.Generic;
@@ -23,7 +26,14 @@ namespace BackApp.Services.S3
                 var stream = new MemoryStream(imageBytes);
                 stream.Seek(0, SeekOrigin.Begin);
                 var transferUtility = new TransferUtility(client);
-                await transferUtility.UploadAsync(stream, "class-image-frontapp", Guid.NewGuid().ToString());
+                var guid = Guid.NewGuid().ToString();
+                await transferUtility.UploadAsync(stream, "class-image-frontapp", guid);
+                var result = await new PostService().SaveAsync(new PostOwnerEntity 
+                {
+                    UserName = owner,
+                    Url = guid,
+                    Coments = new List<Coments>() { new Coments()}
+                });
 
             }
             catch (AmazonS3Exception e)
@@ -34,8 +44,36 @@ namespace BackApp.Services.S3
             {
                 Console.WriteLine("Unknown encountered on server. Message:'{0}' when writing an object", e.Message);
             }
-
             return false;
+        }
+
+        public async Task<MemoryStream> GetImageAsync(string url)
+        {
+            try
+            {
+                var client = new AmazonS3Client("AKIAVXXTXX443DA5PE7T", "wwn5j6JrXgTPa77eknhbfS29leBf/x4GhJ8EX6DH", RegionEndpoint.USEast1);
+                var request = new GetObjectRequest
+                {
+                    BucketName = "class-image-frontapp",
+                    Key = url
+                };
+
+                using (var response = await client.GetObjectAsync(request))
+                using (var stream = response.ResponseStream)
+                {
+                    MemoryStream memoryStream = new MemoryStream();
+                    await stream.CopyToAsync(memoryStream);
+                    memoryStream.Seek(0, SeekOrigin.Begin);
+
+                    return memoryStream;
+                }
+            }
+            catch (Exception e)
+            {
+                throw;
+            }
+
+
         }
     }
 }
