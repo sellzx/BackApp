@@ -22,7 +22,7 @@ namespace BackApp.Controllers
             try
             {
                 byte[] imageBytes = Convert.FromBase64String(request.Image);
-                var result = await new S3Service().DataTransferAsync(imageBytes, request.Owner);
+                var result = await new S3Service().DataTransferAsync(imageBytes, request.Owner.ToLower());
                 return Ok();
             }
             catch (Exception ex)
@@ -56,7 +56,7 @@ namespace BackApp.Controllers
         {
             try
             {
-                var result = await new PostService().QueryAsync(username);
+                var result = await new PostService().QueryAsync(username.ToLower());
                 return Ok(result);
             }
             catch (Exception ex)
