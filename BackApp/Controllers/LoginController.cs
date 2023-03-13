@@ -18,6 +18,7 @@ namespace BackApp.Controllers
         {
             try
             {
+
                 var result = await new LoginService().RegisterUserAsync(registerModel);
                 return Ok(result);
             }
