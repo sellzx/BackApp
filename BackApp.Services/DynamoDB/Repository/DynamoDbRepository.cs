@@ -29,7 +29,7 @@ namespace BackApp.Services.DynamoDB.Repository
 
             AmazonDynamoDBConfig clientConfig = new AmazonDynamoDBConfig();
             clientConfig.RegionEndpoint = RegionEndpoint.USEast1;
-            DbContext = new DynamoDBContext(new AmazonDynamoDBClient("AKIAVXXTXX443DA5PE7T", "wwn5j6JrXgTPa77eknhbfS29leBf/x4GhJ8EX6DH", clientConfig), new DynamoDBContextConfig()
+            DbContext = new DynamoDBContext(new AmazonDynamoDBClient("", "", clientConfig), new DynamoDBContextConfig()
             {
                 ConsistentRead = pconsistentRead,
                 SkipVersionCheck = pskipVersionCheck

@@ -18,7 +18,7 @@ namespace BackApp.Services.S3
     {
         public async Task<bool> DataTransferAsync(byte[] imageBytes, string owner)
         {
-            var client = new AmazonS3Client("AKIAVXXTXX443DA5PE7T", "wwn5j6JrXgTPa77eknhbfS29leBf/x4GhJ8EX6DH", RegionEndpoint.USEast1);
+            var client = new AmazonS3Client("", "", RegionEndpoint.USEast1);
 
 
             try
@@ -51,7 +51,7 @@ namespace BackApp.Services.S3
         {
             try
             {
-                var client = new AmazonS3Client("AKIAVXXTXX443DA5PE7T", "wwn5j6JrXgTPa77eknhbfS29leBf/x4GhJ8EX6DH", RegionEndpoint.USEast1);
+                var client = new AmazonS3Client("", "", RegionEndpoint.USEast1);
                 var request = new GetObjectRequest
                 {
                     BucketName = "class-image-frontapp",
