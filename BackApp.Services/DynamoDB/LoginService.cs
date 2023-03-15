@@ -46,6 +46,80 @@ namespace BackApp.Services.DynamoDB
             return result;
         }
 
+        public async Task<FriendRequestOutputModel> AcceptFriends(RequestInputModel model)
+        {
+            var result = new FriendRequestOutputModel();
+            var getAccepter = await GetAsync(model.Requested);
+            var getAccepted = await GetAsync(model.Requester);
+
+            getAccepted.Friends.Add(getAccepter.EmailAdress);
+            getAccepter.Friends.Add(getAccepted.EmailAdress);
+            getAccepter.Requests.Remove(model.Requester);
+
+            result.Message = $"Se añadio a {model.Requester} a tu lista de amigos!";
+            await SaveAsync(getAccepted);
+            result.Success = await SaveAsync(getAccepter);
+            return result;
+        }
+
+        public async Task<FriendRequestOutputModel> DeleteFriend(RequestInputModel model)
+        {
+            var result = new FriendRequestOutputModel();
+            var getAccepter = await GetAsync(model.Requested);
+            var getAccepted = await GetAsync(model.Requester);
+
+            getAccepted.Friends.Remove(getAccepter.EmailAdress);
+            getAccepter.Friends.Remove(getAccepted.EmailAdress);
+
+            result.Message = $"Se quito a {model.Requested} de tu lista de amigos!";
+            await SaveAsync(getAccepted);
+            result.Success = await SaveAsync(getAccepter);
+            return result;
+        }
+
+        public async Task<FriendRequestOutputModel> DeclineRequest(RequestInputModel model)
+        {
+            var result = new FriendRequestOutputModel();
+            var getAccepter = await GetAsync(model.Requested);
+
+            getAccepter.Requests.Remove(model.Requester);
+
+            result.Message = $"Se ha quitado a {model.Requester} de tus solicitudes";
+            result.Success = await SaveAsync(getAccepter);
+            return result;
+        }
+
+        public async Task<List<string>> GetFriends(string user)
+        {
+            var userInfo = await GetAsync(user);
+
+            return userInfo.Friends;
+        }
+
+        public async Task<FriendRequestOutputModel> FriendRequest(RequestInputModel model)
+        {
+            var result = new FriendRequestOutputModel();
+            var getRequested = await GetAsync(model.Requested);
+
+            if (getRequested == null)
+            {
+                result.Message = $"No existe el usuario {model.Requested} en los registros.";
+                return result;
+            };
+
+            if (getRequested.Requests.Contains(model.Requester))
+            {
+                result.Message = $"Ya se ha enviado solicitud de amistad a {model.Requested}";
+                result.Success = false;
+            }
+            getRequested.Requests.Add(model.Requester);
+
+            result.Message = $"Se ha enviado solicitud de amistad a {model.Requested}";
+            result.Success = await SaveAsync(getRequested);
+
+            return result;
+        }
+
         public async Task<LoginOutputModel> CheckUser(string email, string password)
         {
             var result = new LoginOutputModel();
