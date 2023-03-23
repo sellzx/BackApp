@@ -93,12 +93,24 @@ namespace BackApp.Services.DynamoDB
         {
             var userInfo = await GetAsync(user);
 
-            return userInfo.Friends;
+            return userInfo.Friends == null ? new List<string>() : userInfo.Friends;
+        }
+
+        public async Task<List<string>> GetRequests(string user)
+        {
+            var userInfo = await GetAsync(user);
+
+            return userInfo.Requests == null ? new List<string>() : userInfo.Requests;
         }
 
         public async Task<FriendRequestOutputModel> FriendRequest(RequestInputModel model)
         {
             var result = new FriendRequestOutputModel();
+            if (model.Requested == model.Requester)
+            {
+                result.Message = $"No se puede añadir a si mismo {model.Requested}.";
+                return result;
+            }
             var getRequested = await GetAsync(model.Requested);
 
             if (getRequested == null)
@@ -106,11 +118,17 @@ namespace BackApp.Services.DynamoDB
                 result.Message = $"No existe el usuario {model.Requested} en los registros.";
                 return result;
             };
-
-            if (getRequested.Requests.Contains(model.Requester))
+            if (getRequested.Requests == null)
             {
-                result.Message = $"Ya se ha enviado solicitud de amistad a {model.Requested}";
-                result.Success = false;
+                getRequested.Requests = new List<string>();
+            }
+            foreach (var item in getRequested.Requests)
+            {
+                if (item.Contains(model.Requester))
+                {
+                    result.Message = $"Ya se ha enviado solicitud de amistad a {model.Requested}";
+                    result.Success = false;
+                }
             }
             getRequested.Requests.Add(model.Requester);
 

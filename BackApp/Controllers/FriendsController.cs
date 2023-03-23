@@ -43,6 +43,21 @@ namespace BackApp.Controllers
             }
         }
 
+        [HttpGet]
+        [Route("Requests")]
+        public async Task<IActionResult> GetRequests(string user)
+        {
+            try
+            {
+                var result = await new LoginService().GetRequests(user);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
         [HttpPost]
         [Route("AcceptFriend")]
         public async Task<IActionResult> AcceptFriend([FromBody] RequestInputModel model)
