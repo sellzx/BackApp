@@ -52,9 +52,15 @@ namespace BackApp.Services.DynamoDB
             var getAccepter = await GetAsync(model.Requested);
             var getAccepted = await GetAsync(model.Requester);
 
+            if (getAccepted.Friends == null) getAccepted.Friends = new List<string>();
             getAccepted.Friends.Add(getAccepter.EmailAdress);
+            if (getAccepter.Friends == null) getAccepter.Friends = new List<string>();
             getAccepter.Friends.Add(getAccepted.EmailAdress);
             getAccepter.Requests.Remove(model.Requester);
+            if (getAccepter.Requests.Count == 0)
+            {
+                getAccepter.Requests = new List<string> { "" };
+            }
 
             result.Message = $"Se añadio a {model.Requester} a tu lista de amigos!";
             await SaveAsync(getAccepted);
@@ -81,9 +87,11 @@ namespace BackApp.Services.DynamoDB
         {
             var result = new FriendRequestOutputModel();
             var getAccepter = await GetAsync(model.Requested);
-
-            getAccepter.Requests.Remove(model.Requester);
-
+            getAccepter.Requests = getAccepter.Requests.Where(u => !u.Contains(model.Requester)).Select(u => u).ToList();
+            if (getAccepter.Requests.Count == 0)
+            {
+                getAccepter.Requests = new List<string> { "" };
+            }
             result.Message = $"Se ha quitado a {model.Requester} de tus solicitudes";
             result.Success = await SaveAsync(getAccepter);
             return result;
@@ -118,7 +126,7 @@ namespace BackApp.Services.DynamoDB
                 result.Message = $"No existe el usuario {model.Requested} en los registros.";
                 return result;
             };
-            if (getRequested.Requests == null)
+            if (getRequested.Requests == null || (getRequested.Requests.Count == 1 && getRequested.Requests[0] == ""))
             {
                 getRequested.Requests = new List<string>();
             }
@@ -128,6 +136,7 @@ namespace BackApp.Services.DynamoDB
                 {
                     result.Message = $"Ya se ha enviado solicitud de amistad a {model.Requested}";
                     result.Success = false;
+                    return result;
                 }
             }
             getRequested.Requests.Add(model.Requester);
