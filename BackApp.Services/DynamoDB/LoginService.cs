@@ -63,8 +63,8 @@ namespace BackApp.Services.DynamoDB
             }
 
             result.Message = $"Se añadio a {model.Requester} a tu lista de amigos!";
-            await SaveAsync(getAccepted);
-            result.Success = await SaveAsync(getAccepter);
+            var listSave = new List<LoginServiceEntity> { getAccepted, getAccepter };
+            result.Success = await SaveBatchAsync(listSave);
             return result;
         }
 
@@ -78,8 +78,8 @@ namespace BackApp.Services.DynamoDB
             getAccepter.Friends.Remove(getAccepted.EmailAdress);
 
             result.Message = $"Se quito a {model.Requested} de tu lista de amigos!";
-            await SaveAsync(getAccepted);
-            result.Success = await SaveAsync(getAccepter);
+            var listSave = new List<LoginServiceEntity> { getAccepted, getAccepter };
+            result.Success = await SaveBatchAsync(listSave);
             return result;
         }
 
